@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{#
+
+ScmStats
+Copyright (c) Pause Productions Inc.
+
+Author: Ryan Kadwell <ryan@pause.ca>
+
+#}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+
+        {% stylesheets '../resources/less/*.less' filter='less,yui_css' output='asset/css/core.css' %}
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+        {% endstylesheets %}
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+
+            // Load the Visualization API and the piechart package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart);
+
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart() {
+
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                    ['User 1', 3],
+                    ['User 2', 1],
+                    ['User 3', 1],
+                    ['User 4', 1],
+                    ['User 5', 2]
+                ]);
+
+                // Set chart options
+                var options = {
+                    'backgroundColor': $('body').css('background-color'),
+                    'fontColor': '#aaa',
+                    'title': 'Code by Users',
+                    'width': 500,
+                    'height': 400
+                };
+
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                // var chart = new google.visualization.PieChart($('#chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+            _gaq.push(['_trackPageview']);
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Scm Stats</h1>
+
+
+            </div>
+        </header>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+        <script type="text/javascript">
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

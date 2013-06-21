@@ -1,0 +1,132 @@
+/*
+ * ScmStats
+ * Copyright (c) Pause Productions Inc.
+ *
+ * Author: Ryan Kadwell <ryan@pause.ca>
+ */
+
+// Smaller than standard 960 (devices and browsers)
+// @media only screen and (max-width: 959px) {}
+//
+// Tablet Portrait size to standard 960 (devices and browsers)
+// @media only screen and (min-width: 768px) and (max-width: 959px) {}
+//
+// All Mobile Sizes (devices and browser)
+// @media only screen and (max-width: 767px) {}
+//
+// Mobile Landscape Size to Tablet Portrait (devices and browsers)
+// @media only screen and (min-width: 480px) and (max-width: 767px) {}
+//
+// Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
+// @media only screen and (max-width: 479px) {}
+
+// Reset & Basics (Inspired by E. Meyers)
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u,
+i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// Global Styling
+
+body {
+    background-color: #fafafa;
+    margin: 0;
+
+    p {
+        color: #333333;
+    }
+}
+
+h1, h2 {
+    font-family: 'AmbleBold';
+    color: #333;
+    // font-weight: normal;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+// Header styling
+
+header {
+    padding: 10px 0 5px 0;
+    background-color: #333;
+    border-bottom: 1px solid #303030;
+    margin-bottom: 10px;
+
+    h1 {
+        font-family: 'Lobster13Regular';
+        color: #fff;
+    }
+}
+
+form#repository-url {
+    width: 100%;
+    margin: 20px 0;
+    display: block;
+    text-align: center;
+
+    input[type="text"] {
+        padding: 5px;
+        font-size: 1.5em;
+        width: 50%;
+    }
+
+    input[type="submit"] {
+        // width: 80px;
+        border: 1px solid #444;
+        background-color: #393939;
+        border-radius: 3px;
+        font-size: 1.5em;
+        color: #FFF;
+        padding: 5px;
+    }
+}
+

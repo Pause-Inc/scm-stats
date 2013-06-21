@@ -1,0 +1,6 @@
+/vendor/
+/cache/
+/web/asset
+silex.log
+composer.phar
+composer.lock

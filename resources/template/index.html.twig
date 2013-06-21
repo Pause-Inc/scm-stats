@@ -1,0 +1,23 @@
+{#
+
+ScmStats
+Copyright (c) Pause Productions Inc.
+
+Author: Ryan Kadwell <ryan@pause.ca>
+
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <section class="row">
+        <form id="repository-url" action="" method="post">
+            <input type="text" value="" placeholder="Enter Git URL" />
+            <input type="submit" class="submit" value="Process" />
+        </form>
+    </section>
+
+    <div id="chart_div"></div>
+
+{% endblock %}
