@@ -14,8 +14,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 $app->get('/', controller('default/index'));
 
-
-// $app->error(controller('default/error'));
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {
         return;
@@ -37,5 +35,9 @@ function controller($shortName)
 {
     list($shortClass, $shortMethod) = explode('/', $shortName, 2);
 
-    return sprintf('ScmStats\\Controllers\\%sController::%sAction', ucfirst($shortClass), $shortMethod);
+    return sprintf(
+        'ScmStats\\Controllers\\%sController::%sAction',
+        ucfirst($shortClass),
+        $shortMethod
+    );
 }

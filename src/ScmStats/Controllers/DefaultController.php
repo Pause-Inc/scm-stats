@@ -19,8 +19,8 @@ class DefaultController
     /**
      * Main page
      *
-     * @param  Request     $request
-     * @param  Application $app
+     * @param Symfony\Component\HttpFoundation\Request $request
+     * @param Silex\Application                        $app
      *
      * @return string
      */
@@ -29,24 +29,14 @@ class DefaultController
         return $app['twig']->render('index.html.twig', array());
     }
 
-    // /**
-    //  * Action to handle errors
-    //  *
-    //  * @param  \Exception $e
-    //  * @param             $code
-    //  *
-    //  * @return Symfony\Component\HttpFoundation\Response
-    //  */
-    // public function errorAction(\Exception $e, $code)
-    // {
-    //     die(var_dump($code)));
+    /**
+     * Action for adding a new repository
+     *
+     * @param Symfony\Component\HttpFoundation\Request $request
+     * @param Silex\Application                        $app
+     */
+    public function fetchRepoAction(Request $request, Application $app)
+    {
 
-    //     if ($app['debug']) {
-    //         return;
-    //     }
-
-    //     $page = 404 == $code ? '404.html.twig' : '500.html.twig';
-
-    //     return new Response($app['twig']->render($page, array('code' => $code)), $code);
-    // }
+    }
 }

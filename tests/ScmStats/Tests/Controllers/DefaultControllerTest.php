@@ -6,23 +6,23 @@
  * @author Ryan Kadwell <ryan@pause.ca>
  */
 
-namespace Application\Tests\DefaultTest;
+namespace ScmStats\Tests\Controllers;
 
 use Silex\WebTestCase;
 
-class DefaultTest extends WebTestCase
+class DefaultControllerTest extends WebTestCase
 {
     public function createApplication()
     {
-        $app = require __DIR__ . '/../../../src/app.php';
+        $app = require __DIR__ . '/../../../../src/app.php';
 
-        require __DIR__ . '/../../../config/test.php';
-        require __DIR__ . '/../../../src/controllers.php';
+        require __DIR__ . '/../../../../config/test.php';
+        require __DIR__ . '/../../../../src/controllers.php';
 
         return $app;
     }
 
-    public function testIndexRoute()
+    public function testIndexACtionRoute()
     {
         $client  = $this->createClient();
         $crawler = $client->request('GET', '/');
