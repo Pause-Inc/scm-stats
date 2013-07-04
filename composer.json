@@ -19,7 +19,8 @@
         "symfony/twig-bridge": "2.1.*",
         "symfony/validator": "2.1.*",
         "kriswallsmith/assetic": "*",
-        "mheap/silex-assetic": "*"
+        "mheap/silex-assetic": "*",
+        "dflydev/doctrine-orm-service-provider": "1.0.*@dev"
     },
     "minimum-stability": "dev",
     "autoload": {
